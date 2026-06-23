@@ -13,9 +13,7 @@ class Board;
 class Enemy : public Entity
 {
 public:
-	Enemy();
-	Enemy(int x, int y, int health, int speed, Power power, char symbol);
-	Enemy(const Enemy& other);
+	Enemy(int x, int y, int health, Power power, char symbol);
 	virtual ~Enemy() = default;
 
 	char getSymbol() const override;
@@ -24,9 +22,10 @@ public:
 	bool tryMoveTowardsHeroBFS(Point& enemyPos, const Point& heroPos, const Board& board) const;
 	virtual void takeTurn(const Point& heroPos, const Board& board);
 
-	// Ranged enemies override this to damage the hero from a distance
-	// without needing to occupy the hero's cell. Returns the damage dealt
-	// (0 if no attack happened, e.g. out of range or no line of sight).
+	// Ranged or diagonal-melee enemies override this to damage the hero
+	// without needing to occupy the hero's cell (e.g. an archer firing
+	// from range, or a Brute smashing a diagonally-adjacent hero it can't
+	// yet step onto). Returns the damage dealt (0 if no attack happened).
 	virtual int tryRangedAttack(const Point& heroPos, const Board& board) const;
 
 	void takeDamage(int amount);
@@ -49,7 +48,6 @@ private:
 // Moves two steps per turn instead of one.
 class FastEnemy : public Enemy {
 public:
-	FastEnemy();
 	FastEnemy(int x, int y);
 
 	char getSymbol() const override;
@@ -60,13 +58,23 @@ public:
 
 // Tougher melee enemy: higher health and resists the Knight's Power
 // Strike better than a regular Enemy, but still moves one step per turn.
+//
+// Orthogonal adjacency (one cell away, sharing a row or column) always
+// resolves into a catch on Brute's very next step anyway, since movement
+// is 4-directional -- there's no stable "adjacent but safe" state there,
+// so dealing chip damage in that case would just be masked by the
+// instant loss that follows immediately. Diagonal adjacency is different:
+// it takes Brute two full steps to actually reach the hero from there, so
+// it's a real window where Brute is "close" but can't yet catch you --
+// Smash punishes lingering in that window instead of leaving it free.
 class BruteEnemy : public Enemy {
 public:
-	BruteEnemy();
 	BruteEnemy(int x, int y);
 
 	char getSymbol() const override;
 	std::string getTypeName() const override;
+
+	int tryRangedAttack(const Point& heroPos, const Board& board) const override;
 };
 
 // Stationary archer: does not chase the hero. Instead, every turn it
@@ -75,9 +83,7 @@ public:
 // damage to the hero from a distance instead of moving.
 class RangedEnemy : public Enemy {
 	int range;
-	int rangedDamage;
 public:
-	RangedEnemy();
 	RangedEnemy(int x, int y);
 
 	char getSymbol() const override;

@@ -1,12 +1,7 @@
 #include "Player.h"
 
-Player::Player()
-    : Entity(0, 0, 100, 1, Power(), 'H'),
-    oopCooldown(0), oopMaxCooldown(5), maxHealth(100), invulnerableTurns(0) {
-}
-
-Player::Player(int x, int y, int health, int speed, Power power, char symbol, int oopMaxCooldown)
-    : Entity(x, y, health, speed, power, symbol),
+Player::Player(int x, int y, int health, Power power, char symbol, int oopMaxCooldown)
+    : Entity(x, y, health, power, symbol),
     oopCooldown(0), oopMaxCooldown(oopMaxCooldown), maxHealth(health), invulnerableTurns(0) {
 }
 

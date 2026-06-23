@@ -19,8 +19,7 @@ protected:
 	int invulnerableTurns;   // > 0 means immune to damage for this many upcoming enemy turns
 
 public:
-	Player();
-	Player(int x, int y, int health, int speed, Power power, char symbol, int oopMaxCooldown = 5);
+	Player(int x, int y, int health, Power power, char symbol, int oopMaxCooldown = 5);
 	virtual ~Player() = default;
 
 	char getSymbol() const override;

@@ -7,12 +7,8 @@ private:
 	int damage;
 public:
 
-	Power();
 	Power(std::string name, int dmg);
 
 	std::string getPowerName() const;
 	int getDamage() const;
-
-	void setPowerName(std::string pn);
-	void setDamage(int d);
 };

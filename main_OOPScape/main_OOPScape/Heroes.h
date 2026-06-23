@@ -7,8 +7,7 @@
 // "Teleport" ability.
 class Wizard : public Player {
 public:
-	Wizard();
-	Wizard(int x, int y, int health, int speed);
+	Wizard(int x, int y, int health);
 
 	std::string getClassName() const override;
 	std::string getAbilityName() const override;
@@ -18,12 +17,12 @@ public:
 
 // Knight: Power Strike. Deals damage to every enemy within a 1-cell
 // radius (up/down/left/right and diagonals) of the hero. Enemies can
-// survive the hit if they have enough health left.
+// survive the hit if they have enough health left. Strike damage comes
+// from this hero's Power object (set in the constructor) instead of a
+// separate hardcoded member, so it's one source of truth.
 class Knight : public Player {
-	int strikeDamage;
 public:
-	Knight();
-	Knight(int x, int y, int health, int speed);
+	Knight(int x, int y, int health);
 
 	std::string getClassName() const override;
 	std::string getAbilityName() const override;
@@ -32,13 +31,13 @@ public:
 };
 
 // Healer: restores part of the hero's health and grants a few turns of
-// invulnerability to all damage (contact and ranged).
+// invulnerability to all damage (contact and ranged). The heal amount
+// comes from this hero's Power object instead of a separate hardcoded
+// member, so it's one source of truth.
 class Healer : public Player {
-	int healAmount;
 	int invulnTurns;
 public:
-	Healer();
-	Healer(int x, int y, int health, int speed);
+	Healer(int x, int y, int health);
 
 	std::string getClassName() const override;
 	std::string getAbilityName() const override;

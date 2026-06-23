@@ -3,14 +3,24 @@
 #include <cctype>
 #include <stdexcept>
 
+namespace {
+    // "A Brute Enemy" vs "An Enemy" -- the base Enemy's type name starts
+    // with a vowel sound, the others don't, so this can't be hardcoded.
+    std::string withIndefiniteArticle(const std::string& noun) {
+        static const std::string vowels = "AEIOUaeiou";
+        bool startsWithVowel = !noun.empty() && vowels.find(noun[0]) != std::string::npos;
+        return (startsWithVowel ? "An " : "A ") + noun;
+    }
+}
+
 Game::Game() : difficultyLevel(1), heroClass(HeroClass::Wizard) {}
 
 std::unique_ptr<Player> Game::makeHero(HeroClass cls, int x, int y) {
     switch (cls) {
-    case HeroClass::Knight: return std::make_unique<Knight>(x, y, 120, 1);
-    case HeroClass::Healer: return std::make_unique<Healer>(x, y, 90, 1);
+    case HeroClass::Knight: return std::make_unique<Knight>(x, y, 120);
+    case HeroClass::Healer: return std::make_unique<Healer>(x, y, 90);
     case HeroClass::Wizard:
-    default:                return std::make_unique<Wizard>(x, y, 100, 1);
+    default:                return std::make_unique<Wizard>(x, y, 100);
     }
 }
 
@@ -38,7 +48,7 @@ std::unique_ptr<Enemy> Game::makeEnemyByType(char type, int x, int y) {
     case 'B': return std::make_unique<BruteEnemy>(x, y);
     case 'R': return std::make_unique<RangedEnemy>(x, y);
     case 'N':
-    default:  return std::make_unique<Enemy>(x, y, 50, 1, Power("Bite", 0), 'E');
+    default:  return std::make_unique<Enemy>(x, y, 50, Power("Bite", 0), 'E');
     }
 }
 
@@ -135,7 +145,7 @@ void Game::run() {
 
         if (checkLose()) {
             Color::set(Color::BRIGHT_RED);
-            std::cout << "\n*** Your health reached 0! Game over! ***\n";
+            std::cout << "\n*** " << describeLoss() << " Game over! ***\n";
             Color::reset();
             return;
         }
@@ -231,7 +241,7 @@ void Game::run() {
         if (checkLose()) {
             board.draw(player.get(), liveEnemyPointers());
             Color::set(Color::BRIGHT_RED);
-            std::cout << "\n*** An enemy caught you! Game over! ***\n";
+            std::cout << "\n*** " << describeLoss() << " Game over! ***\n";
             Color::reset();
             return;
         }
@@ -252,7 +262,7 @@ void Game::run() {
         if (checkLose()) {
             board.draw(player.get(), liveEnemyPointers());
             Color::set(Color::BRIGHT_RED);
-            std::cout << "\n*** Game over! ***\n";
+            std::cout << "\n*** " << describeLoss() << " Game over! ***\n";
             Color::reset();
             return;
         }
@@ -269,15 +279,25 @@ void Game::resolveEnemyTurns() {
             continue;
         }
 
-        // Stationary/ranged enemies attack from a distance instead of
-        // moving; melee chasers move exactly one step (or two for Fast).
+        // Attack and movement are independent: a stationary RangedEnemy's
+        // takeTurn() is a no-op either way, and a BruteEnemy that smashes a
+        // diagonally-adjacent hero still takes its normal step afterward --
+        // only RangedEnemy is actually stationary, that's enforced by its
+        // own takeTurn() override, not by skipping the call here.
         int dmg = e->tryRangedAttack(heroPos, board);
         if (dmg > 0) {
+            // Only announce the hit if it actually lands -- takeDamage() is a
+            // no-op while the hero is invulnerable, and saying "hits you for
+            // N damage" when nothing happened would be misleading.
+            if (!player->isInvulnerable()) {
+                Color::set(Color::BRIGHT_RED);
+                std::cout << withIndefiniteArticle(e->getTypeName()) << "'s " << e->getPower().getPowerName()
+                    << " hits you for " << dmg << " damage!\n";
+                Color::reset();
+            }
             player->takeDamage(dmg);
         }
-        else {
-            e->takeTurn(heroPos, board);
-        }
+        e->takeTurn(heroPos, board);
     }
 }
 
@@ -294,6 +314,17 @@ bool Game::checkLose() const {
             return true;
     }
     return false;
+}
+
+std::string Game::describeLoss() const {
+    if (player->getHealth() <= 0)
+        return "Your health reached 0!";
+    for (const auto& e : enemies) {
+        if (!e->isAlive()) continue;
+        if (e->getX() == player->getX() && e->getY() == player->getY())
+            return withIndefiniteArticle(e->getTypeName()) + " caught you!";
+    }
+    return "Game over!"; // shouldn't normally be reached -- checkLose() found a reason, this is just a fallback
 }
 
 void Game::saveGame(const std::string& saveName) const {

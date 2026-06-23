@@ -2,16 +2,8 @@
 #include "Board.h"
 #include <cmath>
 
-Enemy::Enemy()
-    : Entity(0, 0, 50, 1, Power("Bite", 0), 'E') {
-}
-
-Enemy::Enemy(int x, int y, int health, int speed, Power power, char symbol)
-    : Entity(x, y, health, speed, power, symbol) {
-}
-
-Enemy::Enemy(const Enemy& other)
-    : Entity(other) {
+Enemy::Enemy(int x, int y, int health, Power power, char symbol)
+    : Entity(x, y, health, power, symbol) {
 }
 
 char Enemy::getSymbol() const { return symbol; }
@@ -90,12 +82,8 @@ void Enemy::clearStun() { stunned = false; }
 
 
 
-FastEnemy::FastEnemy()
-    : Enemy(0, 0, 30, 2, Power("Bite", 0), 'V') {
-}
-
 FastEnemy::FastEnemy(int x, int y)
-    : Enemy(x, y, 30, 2, Power("Bite", 0), 'V') {
+    : Enemy(x, y, 30, Power("Bite", 0), 'V') {
 }
 
 char FastEnemy::getSymbol() const { return 'V'; }
@@ -115,26 +103,26 @@ void FastEnemy::takeTurn(const Point& heroPos, const Board& board) {
 
 
 
-BruteEnemy::BruteEnemy()
-    : Enemy(0, 0, 120, 1, Power("Smash", 25), 'B') {
-}
-
 BruteEnemy::BruteEnemy(int x, int y)
-    : Enemy(x, y, 120, 1, Power("Smash", 25), 'B') {
+    : Enemy(x, y, 120, Power("Smash", 25), 'B') {
 }
 
 char BruteEnemy::getSymbol() const { return 'B'; }
 
 std::string BruteEnemy::getTypeName() const { return "Brute Enemy"; }
 
-
-
-RangedEnemy::RangedEnemy()
-    : Enemy(0, 0, 40, 0, Power("Arrow", 10), 'R'), range(5), rangedDamage(10) {
+int BruteEnemy::tryRangedAttack(const Point& heroPos, const Board& board) const {
+    (void)board; // melee range, no line-of-sight to check
+    int dx = std::abs(heroPos.getX() - x);
+    int dy = std::abs(heroPos.getY() - y);
+    if (dx == 1 && dy == 1) return getPower().getDamage(); // diagonal only -- see class comment
+    return 0;
 }
 
+
+
 RangedEnemy::RangedEnemy(int x, int y)
-    : Enemy(x, y, 40, 0, Power("Arrow", 10), 'R'), range(5), rangedDamage(10) {
+    : Enemy(x, y, 40, Power("Arrow", 10), 'R'), range(5) {
 }
 
 char RangedEnemy::getSymbol() const { return 'R'; }
@@ -169,5 +157,5 @@ int RangedEnemy::tryRangedAttack(const Point& heroPos, const Board& board) const
         cy += stepY;
     }
 
-    return rangedDamage;
+    return getPower().getDamage();
 }

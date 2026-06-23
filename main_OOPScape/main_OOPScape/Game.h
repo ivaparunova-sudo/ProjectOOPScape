@@ -22,6 +22,9 @@ private:
     void printStatus() const;
     std::vector<Enemy*> liveEnemyPointers() const;
     void resolveEnemyTurns();
+    bool checkWin()  const;
+    bool checkLose() const;
+    std::string describeLoss() const;
     static std::unique_ptr<Player> makeHero(HeroClass cls, int x, int y);
     static std::unique_ptr<Enemy> makeEnemyByType(char type, int x, int y);
     static char enemyTypeCode(const Enemy& e);
@@ -33,9 +36,6 @@ public:
 
     void loadLevel(const std::string& filename, int difficulty, HeroClass cls);
     void run();
-
-    bool checkWin()  const;
-    bool checkLose() const;
 
     void saveGame(const std::string& saveName) const;
     void loadGame(const std::string& saveName);

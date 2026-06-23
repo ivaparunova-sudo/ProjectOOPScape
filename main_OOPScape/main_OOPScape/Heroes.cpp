@@ -5,12 +5,8 @@
 
 // ---------------- Wizard ----------------
 
-Wizard::Wizard()
-    : Player(0, 0, 100, 1, Power("Teleport", 0), 'H', 5) {
-}
-
-Wizard::Wizard(int x, int y, int health, int speed)
-    : Player(x, y, health, speed, Power("Teleport", 0), 'H', 5) {
+Wizard::Wizard(int x, int y, int health)
+    : Player(x, y, health, Power("Teleport", 0), 'H', 5) {
 }
 
 std::string Wizard::getClassName() const { return "Wizard"; }
@@ -39,7 +35,9 @@ bool Wizard::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
                 int dist = std::abs(e->getX() - col) + std::abs(e->getY() - row);
                 if (dist < minEnemyDist) minEnemyDist = dist;
             }
-            if (minEnemyDist == INT_MAX) minEnemyDist = 0;
+            // No INT_MAX fallback needed here: anyEnemyAlive (checked above)
+            // already guarantees this inner loop always finds at least one
+            // living enemy and assigns minEnemyDist a real distance.
 
             if (minEnemyDist > bestDist) {
                 bestDist = minEnemyDist;
@@ -57,12 +55,8 @@ bool Wizard::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
 
 // ---------------- Knight ----------------
 
-Knight::Knight()
-    : Player(0, 0, 120, 1, Power("Power Strike", 30), 'H', 4), strikeDamage(30) {
-}
-
-Knight::Knight(int x, int y, int health, int speed)
-    : Player(x, y, health, speed, Power("Power Strike", 30), 'H', 4), strikeDamage(30) {
+Knight::Knight(int x, int y, int health)
+    : Player(x, y, health, Power("Power Strike", 30), 'H', 4) {
 }
 
 std::string Knight::getClassName() const { return "Knight"; }
@@ -78,7 +72,7 @@ bool Knight::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
         int dx = std::abs(e->getX() - x);
         int dy = std::abs(e->getY() - y);
         if (dx <= 1 && dy <= 1 && (dx + dy) > 0) {
-            e->takeDamage(strikeDamage);
+            e->takeDamage(getPower().getDamage());
             if (e->isAlive()) e->stun(); // surviving enemies are knocked back a beat instead of getting a free hit
             hitAny = true;
         }
@@ -90,12 +84,8 @@ bool Knight::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
 
 // ---------------- Healer ----------------
 
-Healer::Healer()
-    : Player(0, 0, 90, 1, Power("Heal", 0), 'H', 6), healAmount(40), invulnTurns(2) {
-}
-
-Healer::Healer(int x, int y, int health, int speed)
-    : Player(x, y, health, speed, Power("Heal", 0), 'H', 6), healAmount(40), invulnTurns(2) {
+Healer::Healer(int x, int y, int health)
+    : Player(x, y, health, Power("Heal", 40), 'H', 6), invulnTurns(2) {
 }
 
 std::string Healer::getClassName() const { return "Healer"; }
@@ -106,7 +96,7 @@ bool Healer::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
     (void)enemies;
     if (!canUseOOP()) return false;
 
-    heal(healAmount);
+    heal(getPower().getDamage());
     grantInvulnerability(invulnTurns);
     oopCooldown = oopMaxCooldown;
     return true;
