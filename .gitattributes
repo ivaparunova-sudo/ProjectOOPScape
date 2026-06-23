@@ -1,2 +1,16 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalize all text files to CRLF line endings (Windows / Visual Studio style)
+* text=auto eol=crlf
+
+# Explicitly enforce CRLF for source and project files
+*.cpp text eol=crlf
+*.h   text eol=crlf
+*.hpp text eol=crlf
+*.txt text eol=crlf
+*.md  text eol=crlf
+
+# Keep these as-is (binary, do not touch line endings)
+*.exe binary
+*.dll binary
+*.png binary
+*.jpg binary
+*.jpeg binary
