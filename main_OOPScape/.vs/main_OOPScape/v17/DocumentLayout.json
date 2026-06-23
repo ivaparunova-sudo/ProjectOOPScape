@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\main_OOPScape.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\main_OOPScape.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Heroes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\main_OOPScape.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\main_OOPScape.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -21,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -47,22 +63,6 @@
       "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Heroes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Power.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{929E5D5C-EB2A-45C4-8F7E-A88C0395BA75}|main_OOPScape\\main_OOPScape.vcxproj|solutionrelative:main_OOPScape\\Power.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -82,37 +82,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Heroes.h",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.h",
-              "RelativeDocumentMoniker": "main_OOPScape\\Heroes.h",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.h",
-              "RelativeToolTip": "main_OOPScape\\Heroes.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-23T16:33:35.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "main_OOPScape.cpp",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\main_OOPScape.cpp",
               "RelativeDocumentMoniker": "main_OOPScape\\main_OOPScape.cpp",
               "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\main_OOPScape.cpp",
               "RelativeToolTip": "main_OOPScape\\main_OOPScape.cpp",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAADQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwHQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-23T12:11:05.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Game.h",
               "RelativeDocumentMoniker": "main_OOPScape\\Game.h",
@@ -125,72 +112,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Board.h",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.h",
-              "RelativeDocumentMoniker": "main_OOPScape\\Board.h",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.h",
-              "RelativeToolTip": "main_OOPScape\\Board.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACIAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-23T12:14:03.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Color.h",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Color.h",
-              "RelativeDocumentMoniker": "main_OOPScape\\Color.h",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Color.h",
-              "RelativeToolTip": "main_OOPScape\\Color.h",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-23T12:13:46.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.h",
               "RelativeDocumentMoniker": "main_OOPScape\\Enemy.h",
               "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.h",
               "RelativeToolTip": "main_OOPScape\\Enemy.h",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEoAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAYwFcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-23T12:13:38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Entity.h",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.h",
-              "RelativeDocumentMoniker": "main_OOPScape\\Entity.h",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.h",
-              "RelativeToolTip": "main_OOPScape\\Entity.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-23T12:12:49.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Game.cpp",
               "RelativeDocumentMoniker": "main_OOPScape\\Game.cpp",
               "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Game.cpp",
               "RelativeToolTip": "main_OOPScape\\Game.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH4AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGoBAAAAAAAAAAAcwIMBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-23T12:11:59.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Player.cpp",
               "RelativeDocumentMoniker": "main_OOPScape\\Player.cpp",
@@ -203,7 +151,111 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Board.cpp",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.cpp",
+              "RelativeDocumentMoniker": "main_OOPScape\\Board.cpp",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.cpp",
+              "RelativeToolTip": "main_OOPScape\\Board.cpp",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAcwL8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-23T12:15:42.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.cpp",
+              "RelativeDocumentMoniker": "main_OOPScape\\Enemy.cpp",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.cpp",
+              "RelativeToolTip": "main_OOPScape\\Enemy.cpp",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAcwKwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-23T12:16:11.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Heroes.cpp",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.cpp",
+              "RelativeDocumentMoniker": "main_OOPScape\\Heroes.cpp",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.cpp",
+              "RelativeToolTip": "main_OOPScape\\Heroes.cpp",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAcwHAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-23T16:33:50.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.cpp",
+              "RelativeDocumentMoniker": "main_OOPScape\\Entity.cpp",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.cpp",
+              "RelativeToolTip": "main_OOPScape\\Entity.cpp",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAYwDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-23T12:13:09.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "Entity.h",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.h",
+              "RelativeDocumentMoniker": "main_OOPScape\\Entity.h",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.h",
+              "RelativeToolTip": "main_OOPScape\\Entity.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-23T12:12:49.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Color.h",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Color.h",
+              "RelativeDocumentMoniker": "main_OOPScape\\Color.h",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Color.h",
+              "RelativeToolTip": "main_OOPScape\\Color.h",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-23T12:13:46.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Board.h",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.h",
+              "RelativeDocumentMoniker": "main_OOPScape\\Board.h",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.h",
+              "RelativeToolTip": "main_OOPScape\\Board.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-23T12:14:03.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Heroes.h",
+              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.h",
+              "RelativeDocumentMoniker": "main_OOPScape\\Heroes.h",
+              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.h",
+              "RelativeToolTip": "main_OOPScape\\Heroes.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-23T16:33:35.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Power.cpp",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Power.cpp",
               "RelativeDocumentMoniker": "main_OOPScape\\Power.cpp",
@@ -216,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Point.cpp",
               "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Point.cpp",
               "RelativeDocumentMoniker": "main_OOPScape\\Point.cpp",
@@ -225,58 +277,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-23T12:16:26.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Enemy.cpp",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.cpp",
-              "RelativeDocumentMoniker": "main_OOPScape\\Enemy.cpp",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Enemy.cpp",
-              "RelativeToolTip": "main_OOPScape\\Enemy.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-23T12:16:11.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Heroes.cpp",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.cpp",
-              "RelativeDocumentMoniker": "main_OOPScape\\Heroes.cpp",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Heroes.cpp",
-              "RelativeToolTip": "main_OOPScape\\Heroes.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-23T16:33:50.346Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Entity.cpp",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.cpp",
-              "RelativeDocumentMoniker": "main_OOPScape\\Entity.cpp",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Entity.cpp",
-              "RelativeToolTip": "main_OOPScape\\Entity.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-23T12:13:09.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Board.cpp",
-              "DocumentMoniker": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.cpp",
-              "RelativeDocumentMoniker": "main_OOPScape\\Board.cpp",
-              "ToolTip": "C:\\Users\\yoniz\\Documents\\Iva Parunova\\\u0424\u041C\u0418\\\u041F\u044A\u0440\u0432\u0438 \u043A\u0443\u0440\u0441\\\u041E\u0431\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438\u0440\u0430\u043D\u0435\\ProjectOOPScape\\ProjectOOPScape\\main_OOPScape\\main_OOPScape\\Board.cpp",
-              "RelativeToolTip": "main_OOPScape\\Board.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-23T12:15:42.227Z",
               "EditorCaption": ""
             },
             {

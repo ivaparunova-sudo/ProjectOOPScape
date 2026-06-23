@@ -19,6 +19,12 @@ std::string Wizard::getAbilityName() const { return "Teleport"; }
 bool Wizard::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
     if (!canUseOOP()) return false;
 
+    bool anyEnemyAlive = false;
+    for (const Enemy* e : enemies) {
+        if (e->isAlive()) { anyEnemyAlive = true; break; }
+    }
+    if (!anyEnemyAlive) return false; // nothing to evade -- don't waste the cooldown
+
     int n = board.getSize();
     int bestDist = -1;
     int bestX = x, bestY = y;
@@ -73,6 +79,7 @@ bool Knight::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
         int dy = std::abs(e->getY() - y);
         if (dx <= 1 && dy <= 1 && (dx + dy) > 0) {
             e->takeDamage(strikeDamage);
+            if (e->isAlive()) e->stun(); // surviving enemies are knocked back a beat instead of getting a free hit
             hitAny = true;
         }
     }

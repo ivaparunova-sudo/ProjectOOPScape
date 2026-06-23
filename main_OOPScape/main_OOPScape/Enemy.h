@@ -31,6 +31,19 @@ public:
 
 	void takeDamage(int amount);
 	bool isAlive() const;
+
+	// Lets an ability (e.g. Knight's Power Strike) interrupt this enemy's
+	// very next turn -- it skips both movement and ranged attack once,
+	// then the stun clears itself. Without this, hitting an adjacent
+	// enemy that survives the hit accomplishes nothing: the enemy still
+	// gets to act immediately afterward and can still catch the hero on
+	// the same turn the ability was used.
+	void stun();
+	bool isStunned() const;
+	void clearStun();
+
+private:
+	bool stunned = false;
 };
 
 // Moves two steps per turn instead of one.

@@ -109,7 +109,7 @@ void Game::printStatus() const {
     Color::reset();
     std::cout << "=Enemy  ";
     Color::set(Color::BRIGHT_RED);
-    std::cout << "F";
+    std::cout << "V";
     Color::reset();
     std::cout << "=Fast  ";
     Color::set(Color::BRIGHT_RED);
@@ -199,9 +199,23 @@ void Game::run() {
         else if (command == "SAVE") {
             std::string saveName;
             std::cout << "Save name: ";
-            std::cin >> saveName;
-            saveGame(saveName);
-            std::cout << "Game saved to '" << saveName << "'.\n";
+            if (!(std::cin >> saveName)) {
+                std::cin.clear();
+                std::cin.ignore(1000, '\n');
+                Color::set(Color::BRIGHT_YELLOW);
+                std::cout << "Could not read a save name.\n";
+                Color::reset();
+                continue;
+            }
+            try {
+                saveGame(saveName);
+                std::cout << "Game saved to '" << saveName << "'.\n";
+            }
+            catch (const std::exception& ex) {
+                Color::set(Color::BRIGHT_YELLOW);
+                std::cout << "Save failed: " << ex.what() << "\n";
+                Color::reset();
+            }
             continue;
         }
         else if (command == "QUIT") {
@@ -214,13 +228,6 @@ void Game::run() {
         }
 
 
-        if (checkWin()) {
-            board.draw(player.get(), liveEnemyPointers());
-            Color::set(Color::BRIGHT_GREEN);
-            std::cout << "\n*** You reached the exit! You win! ***\n";
-            Color::reset();
-            return;
-        }
         if (checkLose()) {
             board.draw(player.get(), liveEnemyPointers());
             Color::set(Color::BRIGHT_RED);
@@ -228,11 +235,18 @@ void Game::run() {
             Color::reset();
             return;
         }
+        if (checkWin()) {
+            board.draw(player.get(), liveEnemyPointers());
+            Color::set(Color::BRIGHT_GREEN);
+            std::cout << "\n*** You reached the exit! You win! ***\n";
+            Color::reset();
+            return;
+        }
 
 
         player->tickCooldown();
-        player->tickInvulnerability();
         resolveEnemyTurns();
+        player->tickInvulnerability();
 
 
         if (checkLose()) {
@@ -249,6 +263,11 @@ void Game::resolveEnemyTurns() {
     Point heroPos(player->getX(), player->getY());
     for (auto& e : enemies) {
         if (!e->isAlive()) continue;
+
+        if (e->isStunned()) {
+            e->clearStun(); // stun lasts exactly the round it was inflicted
+            continue;
+        }
 
         // Stationary/ranged enemies attack from a distance instead of
         // moving; melee chasers move exactly one step (or two for Fast).
@@ -298,27 +317,70 @@ void Game::loadGame(const std::string& saveName) {
     if (!save.is_open())
         throw std::runtime_error("Could not open save file: " + saveName);
 
-    save >> difficultyLevel;
+    if (!(save >> difficultyLevel))
+        throw std::runtime_error("Save file corrupted: could not read difficulty level");
+    if (difficultyLevel < 1 || difficultyLevel > 6)
+        throw std::runtime_error("Save file corrupted: difficulty level " +
+            std::to_string(difficultyLevel) + " is out of range (1-6)");
 
     char classCode;
-    save >> classCode;
+    if (!(save >> classCode))
+        throw std::runtime_error("Save file corrupted: could not read hero class code");
+    if (classCode != 'K' && classCode != 'L' && classCode != 'W')
+        throw std::runtime_error(std::string("Save file corrupted: unknown hero class code '") +
+            classCode + "'");
     heroClass = heroClassFromCode(classCode);
 
     board.loadFromFile("Boards.txt", difficultyLevel);
+    int n = board.getSize();
 
     int heroX, heroY, heroHealth, cooldown;
-    save >> heroX >> heroY >> heroHealth >> cooldown;
+    if (!(save >> heroX >> heroY >> heroHealth >> cooldown))
+        throw std::runtime_error("Save file corrupted: could not read hero state");
+    if (heroX < 0 || heroY < 0 || heroX >= n || heroY >= n)
+        throw std::runtime_error("Save file corrupted: hero position (" + std::to_string(heroX) +
+            "," + std::to_string(heroY) + ") is outside the " + std::to_string(n) + "x" +
+            std::to_string(n) + " board");
+    if (!board.isWalkable(heroX, heroY))
+        throw std::runtime_error("Save file corrupted: hero position (" + std::to_string(heroX) +
+            "," + std::to_string(heroY) + ") is not a walkable cell");
+    if (cooldown < 0)
+        throw std::runtime_error("Save file corrupted: negative ability cooldown (" +
+            std::to_string(cooldown) + ")");
+
     player = makeHero(heroClass, heroX, heroY);
+
+    if (heroHealth < 0 || heroHealth > player->getMaxHealth())
+        throw std::runtime_error("Save file corrupted: hero health " + std::to_string(heroHealth) +
+            " is out of range (0-" + std::to_string(player->getMaxHealth()) + ")");
     player->setHealth(heroHealth);
     player->setOopCooldown(cooldown);
 
     int enemyCount;
-    save >> enemyCount;
+    if (!(save >> enemyCount))
+        throw std::runtime_error("Save file corrupted: could not read enemy count");
+    if (enemyCount < 0 || enemyCount > n * n)
+        throw std::runtime_error("Save file corrupted: invalid enemy count " +
+            std::to_string(enemyCount));
+
     enemies.clear();
     for (int i = 0; i < enemyCount; i++) {
         char type;
         int ex, ey, eHealth;
-        save >> type >> ex >> ey >> eHealth;
+        if (!(save >> type >> ex >> ey >> eHealth))
+            throw std::runtime_error("Save file corrupted: could not read enemy #" +
+                std::to_string(i));
+        if (type != 'F' && type != 'B' && type != 'R' && type != 'N')
+            throw std::runtime_error("Save file corrupted: enemy #" + std::to_string(i) +
+                " has unknown type code '" + type + "'");
+        if (ex < 0 || ey < 0 || ex >= n || ey >= n)
+            throw std::runtime_error("Save file corrupted: enemy #" + std::to_string(i) +
+                " position (" + std::to_string(ex) + "," + std::to_string(ey) +
+                ") is outside the board");
+        if (eHealth < 0)
+            throw std::runtime_error("Save file corrupted: enemy #" + std::to_string(i) +
+                " has negative health (" + std::to_string(eHealth) + ")");
+
         auto enemy = makeEnemyByType(type, ex, ey);
         enemy->setHealth(eHealth);
         enemies.push_back(std::move(enemy));

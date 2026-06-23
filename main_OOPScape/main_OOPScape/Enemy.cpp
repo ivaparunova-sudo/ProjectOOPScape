@@ -84,17 +84,21 @@ bool Enemy::isAlive() const {
     return health > 0;
 }
 
+void Enemy::stun() { stunned = true; }
+bool Enemy::isStunned() const { return stunned; }
+void Enemy::clearStun() { stunned = false; }
+
 
 
 FastEnemy::FastEnemy()
-    : Enemy(0, 0, 30, 2, Power("Bite", 0), 'F') {
+    : Enemy(0, 0, 30, 2, Power("Bite", 0), 'V') {
 }
 
 FastEnemy::FastEnemy(int x, int y)
-    : Enemy(x, y, 30, 2, Power("Bite", 0), 'F') {
+    : Enemy(x, y, 30, 2, Power("Bite", 0), 'V') {
 }
 
-char FastEnemy::getSymbol() const { return 'F'; }
+char FastEnemy::getSymbol() const { return 'V'; }
 
 std::string FastEnemy::getTypeName() const { return "Fast Enemy"; }
 

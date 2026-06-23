@@ -1,6 +1,7 @@
 #include "Board.h"
 #include "Enemy.h"
 #include "Color.h"
+#include <queue>
 
 Board::Board() : size(0) {}
 
@@ -35,7 +36,8 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
 
         size_t first = line.find_first_not_of(" \t\r\n");
         if (first == std::string::npos) continue;
-        std::string trimmed = line.substr(first);
+        size_t last = line.find_last_not_of(" \t\r\n");
+        std::string trimmed = line.substr(first, last - first + 1);
 
 
         bool isNumber = !trimmed.empty();
@@ -55,7 +57,7 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
             if (!std::getline(file, row))
                 throw std::runtime_error("Unexpected end of file while reading map of size " +
                     std::to_string(n) + " (expected " + std::to_string(n) + " rows, got " +
-                    std::to_string(rows.size()));
+                    std::to_string(rows.size()) + ")");
             // Strip a trailing carriage return left over from CRLF line endings,
             // but otherwise the row's length must match n exactly -- it is NOT
             // padded or truncated, since that would silently hide malformed maps.
@@ -100,6 +102,37 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
             throw std::runtime_error("Map must have exactly one 'F' (found " + std::to_string(countF) + ")");
         if (startPos == exitPos)
             throw std::runtime_error("Start position 'S' and exit 'F' cannot be the same cell");
+
+        // Verify a path actually exists from S to F. Without this, an
+        // unsolvable map would only be discovered by the player after
+        // wandering into a dead end -- reject it up front instead.
+        {
+            std::vector<std::vector<bool>> visited(n, std::vector<bool>(n, false));
+            std::queue<Point> q;
+            q.push(startPos);
+            visited[startPos.getY()][startPos.getX()] = true;
+
+            const int dx[4] = { -1, 1, 0, 0 };
+            const int dy[4] = { 0, 0, -1, 1 };
+            bool reachable = false;
+
+            while (!q.empty()) {
+                Point cur = q.front(); q.pop();
+                if (cur == exitPos) { reachable = true; break; }
+                for (int k = 0; k < 4; ++k) {
+                    int nx = cur.getX() + dx[k];
+                    int ny = cur.getY() + dy[k];
+                    if (nx < 0 || ny < 0 || nx >= n || ny >= n) continue;
+                    if (visited[ny][nx] || rows[ny][nx] == '*') continue;
+                    visited[ny][nx] = true;
+                    q.push(Point(nx, ny));
+                }
+            }
+
+            if (!reachable)
+                throw std::runtime_error("Map #" + std::to_string(difficultyLevel) +
+                    " is unsolvable: no path exists from 'S' to 'F'");
+        }
 
         size = n;
         found = true;

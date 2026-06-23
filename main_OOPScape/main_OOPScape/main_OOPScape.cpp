@@ -26,7 +26,12 @@ static void newGame() {
         << "Choose: ";
 
     int level;
-    std::cin >> level;
+    if (!(std::cin >> level)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Invalid level.\n";
+        return;
+    }
     if (level < 1 || level > 6) {
         std::cout << "Invalid level.\n";
         return;
@@ -39,7 +44,11 @@ static void newGame() {
         << "Choose: ";
 
     int classChoice;
-    std::cin >> classChoice;
+    if (!(std::cin >> classChoice)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        classChoice = 1; // fall back to default (Wizard) below
+    }
 
     HeroClass cls;
     if (classChoice == 2) {
@@ -65,7 +74,12 @@ static void newGame() {
 static void loadGame() {
     std::cout << "Save file name: ";
     std::string name;
-    std::cin >> name;
+    if (!(std::cin >> name)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Could not read a save file name.\n";
+        return;
+    }
 
     try {
         Game game;
