@@ -1,14 +1,4 @@
-﻿  Board.cpp
-  Enemy.cpp
-  Entity.cpp
-  Game.cpp
-  Heroes.cpp
-  main_OOPScape.cpp
+﻿  main_OOPScape.cpp
   Player.cpp
-C:\Users\yoniz\Documents\Iva Parunova\ФМИ\Първи курс\Обектно-ориентирано програмиране\ProjectOOPScape\ProjectOOPScape\main_OOPScape\main_OOPScape\main_OOPScape.cpp(37,14): error C2660: 'Game::loadLevel': function does not take 2 arguments
-      C:\Users\yoniz\Documents\Iva Parunova\ФМИ\Първи курс\Обектно-ориентирано програмиране\ProjectOOPScape\ProjectOOPScape\main_OOPScape\main_OOPScape\Game.h(34,10):
-      see declaration of 'Game::loadLevel'
-      C:\Users\yoniz\Documents\Iva Parunova\ФМИ\Първи курс\Обектно-ориентирано програмиране\ProjectOOPScape\ProjectOOPScape\main_OOPScape\main_OOPScape\main_OOPScape.cpp(37,14):
-      while trying to match the argument list '(const char [11], int)'
-  
   Generating Code...
+  main_OOPScape.vcxproj -> C:\Users\yoniz\Documents\Iva Parunova\ФМИ\Първи курс\Обектно-ориентирано програмиране\ProjectOOPScape\ProjectOOPScape\main_OOPScape\x64\Debug\main_OOPScape.exe

@@ -32,9 +32,29 @@ static void newGame() {
         return;
     }
 
+    std::cout << "\nChoose your Hero Class:\n"
+        << "  (1) Wizard\n"
+        << "  (2) Knight\n"
+        << "  (3) Healer\n"
+        << "Choose: ";
+
+    int classChoice;
+    std::cin >> classChoice;
+
+    HeroClass cls;
+    if (classChoice == 2) {
+        cls = HeroClass::Knight;
+    }
+    else if (classChoice == 3) {
+        cls = HeroClass::Healer;
+    }
+    else {
+        cls = HeroClass::Wizard; // Default or fallback selection
+    }
+
     try {
         Game game;
-        game.loadLevel("Boards.txt", level);
+        game.loadLevel("Boards.txt", level, cls);
         game.run();
     }
     catch (const std::exception& ex) {

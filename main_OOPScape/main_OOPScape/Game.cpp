@@ -124,7 +124,7 @@ void Game::printStatus() const {
     std::cout << "F";
     Color::reset();
     std::cout << "=Exit\n";
-    std::cout << "Commands: L/R/U/D or W/A/S/D to move, OOP for ability, SAVE, QUIT\n";
+    std::cout << "Commands: L/R/U/D to move, OOP for ability, SAVE, QUIT\n";
 }
 
 void Game::run() {
