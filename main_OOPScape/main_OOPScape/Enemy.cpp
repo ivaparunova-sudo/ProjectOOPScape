@@ -63,7 +63,7 @@ void Enemy::takeTurn(const Point& heroPos, const Board& board) {
 int Enemy::tryRangedAttack(const Point& heroPos, const Board& board) const {
     (void)heroPos;
     (void)board;
-    return 0; // base enemies have no ranged attack
+    return 0; 
 }
 
 void Enemy::takeDamage(int amount) {
@@ -112,10 +112,10 @@ char BruteEnemy::getSymbol() const { return 'B'; }
 std::string BruteEnemy::getTypeName() const { return "Brute Enemy"; }
 
 int BruteEnemy::tryRangedAttack(const Point& heroPos, const Board& board) const {
-    (void)board; // melee range, no line-of-sight to check
+    (void)board; 
     int dx = std::abs(heroPos.getX() - x);
     int dy = std::abs(heroPos.getY() - y);
-    if (dx == 1 && dy == 1) return getPower().getDamage(); // diagonal only -- see class comment
+    if (dx == 1 && dy == 1) return getPower().getDamage(); 
     return 0;
 }
 
@@ -130,9 +130,6 @@ char RangedEnemy::getSymbol() const { return 'R'; }
 std::string RangedEnemy::getTypeName() const { return "Ranged Enemy"; }
 
 void RangedEnemy::takeTurn(const Point& heroPos, const Board& board) {
-    // RangedEnemy is stationary: it never moves, it only fires (see
-    // tryRangedAttack, invoked separately by Game). It intentionally
-    // overrides takeTurn with a no-op to avoid chasing the hero.
     (void)heroPos;
     (void)board;
 }
@@ -145,8 +142,6 @@ int RangedEnemy::tryRangedAttack(const Point& heroPos, const Board& board) const
     int dist = sameRow ? std::abs(heroPos.getX() - x) : std::abs(heroPos.getY() - y);
     if (dist == 0 || dist > range) return 0;
 
-    // Check line of sight: every cell strictly between the archer and the
-    // hero must be walkable (no wall blocks the shot).
     int stepX = sameRow ? (heroPos.getX() > x ? 1 : -1) : 0;
     int stepY = sameCol ? (heroPos.getY() > y ? 1 : -1) : 0;
 

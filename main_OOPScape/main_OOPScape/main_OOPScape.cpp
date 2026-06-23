@@ -47,7 +47,12 @@ static void newGame() {
     if (!(std::cin >> classChoice)) {
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        classChoice = 1; // fall back to default (Wizard) below
+        std::cout << "Invalid hero class.\n";
+        return;
+    }
+    if (classChoice < 1 || classChoice > 3) {
+        std::cout << "Invalid hero class.\n";
+        return;
     }
 
     HeroClass cls;
@@ -58,8 +63,12 @@ static void newGame() {
         cls = HeroClass::Healer;
     }
     else {
-        cls = HeroClass::Wizard; // Default or fallback selection
+        cls = HeroClass::Wizard; 
     }
+
+    Color::set(Color::BRIGHT_CYAN);
+    std::cout << "\n" << Game::describeHero(cls) << "\n";
+    Color::reset();
 
     try {
         Game game;

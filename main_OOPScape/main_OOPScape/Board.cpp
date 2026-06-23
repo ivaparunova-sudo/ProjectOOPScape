@@ -58,9 +58,6 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
                 throw std::runtime_error("Unexpected end of file while reading map of size " +
                     std::to_string(n) + " (expected " + std::to_string(n) + " rows, got " +
                     std::to_string(rows.size()) + ")");
-            // Strip a trailing carriage return left over from CRLF line endings,
-            // but otherwise the row's length must match n exactly -- it is NOT
-            // padded or truncated, since that would silently hide malformed maps.
             if (!row.empty() && row.back() == '\r') row.pop_back();
             rows.push_back(row);
         }
@@ -103,9 +100,6 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
         if (startPos == exitPos)
             throw std::runtime_error("Start position 'S' and exit 'F' cannot be the same cell");
 
-        // Verify a path actually exists from S to F. Without this, an
-        // unsolvable map would only be discovered by the player after
-        // wandering into a dead end -- reject it up front instead.
         {
             std::vector<std::vector<bool>> visited(n, std::vector<bool>(n, false));
             std::queue<Point> q;

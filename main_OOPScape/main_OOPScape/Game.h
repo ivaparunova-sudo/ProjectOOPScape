@@ -37,6 +37,8 @@ public:
     void loadLevel(const std::string& filename, int difficulty, HeroClass cls);
     void run();
 
+    static std::string describeHero(HeroClass cls);
+
     void saveGame(const std::string& saveName) const;
     void loadGame(const std::string& saveName);
 

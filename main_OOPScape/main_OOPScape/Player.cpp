@@ -9,6 +9,7 @@ char Player::getSymbol() const { return symbol; }
 
 bool Player::canUseOOP() const { return oopCooldown == 0; }
 int  Player::getOopCooldown() const { return oopCooldown; }
+int  Player::getOopMaxCooldown() const { return oopMaxCooldown; }
 int  Player::getMaxHealth() const { return maxHealth; }
 bool Player::isInvulnerable() const { return invulnerableTurns > 0; }
 

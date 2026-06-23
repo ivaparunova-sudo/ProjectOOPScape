@@ -3,7 +3,7 @@
 #include <climits>
 #include <cmath>
 
-// ---------------- Wizard ----------------
+
 
 Wizard::Wizard(int x, int y, int health)
     : Player(x, y, health, Power("Teleport", 0), 'H', 5) {
@@ -19,7 +19,7 @@ bool Wizard::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
     for (const Enemy* e : enemies) {
         if (e->isAlive()) { anyEnemyAlive = true; break; }
     }
-    if (!anyEnemyAlive) return false; // nothing to evade -- don't waste the cooldown
+    if (!anyEnemyAlive) return false;
 
     int n = board.getSize();
     int bestDist = -1;
@@ -35,9 +35,6 @@ bool Wizard::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
                 int dist = std::abs(e->getX() - col) + std::abs(e->getY() - row);
                 if (dist < minEnemyDist) minEnemyDist = dist;
             }
-            // No INT_MAX fallback needed here: anyEnemyAlive (checked above)
-            // already guarantees this inner loop always finds at least one
-            // living enemy and assigns minEnemyDist a real distance.
 
             if (minEnemyDist > bestDist) {
                 bestDist = minEnemyDist;
@@ -53,7 +50,6 @@ bool Wizard::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
     return true;
 }
 
-// ---------------- Knight ----------------
 
 Knight::Knight(int x, int y, int health)
     : Player(x, y, health, Power("Power Strike", 30), 'H', 4) {
@@ -73,7 +69,7 @@ bool Knight::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
         int dy = std::abs(e->getY() - y);
         if (dx <= 1 && dy <= 1 && (dx + dy) > 0) {
             e->takeDamage(getPower().getDamage());
-            if (e->isAlive()) e->stun(); // surviving enemies are knocked back a beat instead of getting a free hit
+            if (e->isAlive()) e->stun(); 
             hitAny = true;
         }
     }
@@ -82,7 +78,7 @@ bool Knight::useOOP(const Board& board, const std::vector<Enemy*>& enemies) {
     return hitAny;
 }
 
-// ---------------- Healer ----------------
+
 
 Healer::Healer(int x, int y, int health)
     : Player(x, y, health, Power("Heal", 40), 'H', 6), invulnTurns(2) {

@@ -26,25 +26,21 @@ public:
 
 	bool canUseOOP() const;
 	int getOopCooldown() const;
+	int getOopMaxCooldown() const;
 	int getMaxHealth() const;
 	bool isInvulnerable() const;
 
 	void setOopCooldown(int cooldown);
 	void tickCooldown();
 
-	// Applies incoming damage, respecting invulnerability. Clamps health at 0.
 	void takeDamage(int amount);
 	void heal(int amount);
 
-	// Decrements invulnerability counter; called once per full turn.
 	void tickInvulnerability();
 	void grantInvulnerability(int turns);
 
-	// Name of the hero class, shown in the status bar (e.g. "Wizard").
 	virtual std::string getClassName() const = 0;
-	// Short label for the active ability, shown in the status bar (e.g. "Teleport").
 	virtual std::string getAbilityName() const = 0;
 
-	// Executes the hero's special ability. Returns true if it was used successfully.
 	virtual bool useOOP(const Board& board, const std::vector<Enemy*>& enemies) = 0;
 };

@@ -4,8 +4,6 @@
 #include <stdexcept>
 
 namespace {
-    // "A Brute Enemy" vs "An Enemy" -- the base Enemy's type name starts
-    // with a vowel sound, the others don't, so this can't be hardcoded.
     std::string withIndefiniteArticle(const std::string& noun) {
         static const std::string vowels = "AEIOUaeiou";
         bool startsWithVowel = !noun.empty() && vowels.find(noun[0]) != std::string::npos;
@@ -22,6 +20,13 @@ std::unique_ptr<Player> Game::makeHero(HeroClass cls, int x, int y) {
     case HeroClass::Wizard:
     default:                return std::make_unique<Wizard>(x, y, 100);
     }
+}
+
+std::string Game::describeHero(HeroClass cls) {
+    auto hero = makeHero(cls, 0, 0); 
+    return hero->getClassName() + " -- " + std::to_string(hero->getMaxHealth()) +
+        " HP, ability: " + hero->getAbilityName() + " (" +
+        std::to_string(hero->getOopMaxCooldown()) + "-turn cooldown)";
 }
 
 char Game::heroClassCode(HeroClass cls) {
@@ -72,10 +77,6 @@ void Game::loadLevel(const std::string& filename, int difficulty, HeroClass cls)
     for (int i = 0; i < (int)positions.size(); ++i) {
         const Point& ep = positions[i];
 
-        // Distribute enemy variety across the spawn points found on the map:
-        // every 4th enemy is a Brute, every 3rd (remaining) is Fast, every
-        // 5th is Ranged, the rest are regular chasers. This guarantees at
-        // least some variety without needing extra map syntax.
         char type = 'N';
         if (i % 5 == 4)      type = 'R';
         else if (i % 4 == 3) type = 'B';
@@ -159,15 +160,11 @@ void Game::run() {
         }
         for (char& c : command) c = (char)toupper(c);
 
-        // Both WASD and the assignment's L/R/U/D scheme are accepted.
         if (command == "W" || command == "U" ||
             command == "A" || command == "L" ||
             command == "S" || command == "D" ||
             command == "R") {
 
-            // Note: 'D' is ambiguous between "Down" (assignment scheme) and
-            // "right" in WASD-only thinking, but since the assignment defines
-            // D = down explicitly, that's the meaning used here; 'A' is left.
             int dx = 0, dy = 0;
             if (command == "W" || command == "U") dy = -1;
             else if (command == "S" || command == "D") dy = 1;
@@ -233,7 +230,7 @@ void Game::run() {
             return;
         }
         else {
-            std::cout << "Unknown command. Use L/R/U/D (or WASD), OOP, SAVE, QUIT.\n";
+            std::cout << "Unknown command. Use L/R/U/D, OOP, SAVE, QUIT.\n";
             continue;
         }
 
@@ -275,20 +272,13 @@ void Game::resolveEnemyTurns() {
         if (!e->isAlive()) continue;
 
         if (e->isStunned()) {
-            e->clearStun(); // stun lasts exactly the round it was inflicted
+            e->clearStun();
             continue;
         }
 
-        // Attack and movement are independent: a stationary RangedEnemy's
-        // takeTurn() is a no-op either way, and a BruteEnemy that smashes a
-        // diagonally-adjacent hero still takes its normal step afterward --
-        // only RangedEnemy is actually stationary, that's enforced by its
-        // own takeTurn() override, not by skipping the call here.
         int dmg = e->tryRangedAttack(heroPos, board);
         if (dmg > 0) {
-            // Only announce the hit if it actually lands -- takeDamage() is a
-            // no-op while the hero is invulnerable, and saying "hits you for
-            // N damage" when nothing happened would be misleading.
+            
             if (!player->isInvulnerable()) {
                 Color::set(Color::BRIGHT_RED);
                 std::cout << withIndefiniteArticle(e->getTypeName()) << "'s " << e->getPower().getPowerName()
@@ -324,7 +314,7 @@ std::string Game::describeLoss() const {
         if (e->getX() == player->getX() && e->getY() == player->getY())
             return withIndefiniteArticle(e->getTypeName()) + " caught you!";
     }
-    return "Game over!"; // shouldn't normally be reached -- checkLose() found a reason, this is just a fallback
+    return "Game over!"; 
 }
 
 void Game::saveGame(const std::string& saveName) const {
