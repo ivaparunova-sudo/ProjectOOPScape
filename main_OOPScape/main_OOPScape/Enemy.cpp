@@ -1,8 +1,9 @@
 #include "Enemy.h"
 #include "Board.h"
+#include <cmath>
 
 Enemy::Enemy()
-    : Entity(0, 0, 50, 1, Power(), 'E') {
+    : Entity(0, 0, 50, 1, Power("Bite", 0), 'E') {
 }
 
 Enemy::Enemy(int x, int y, int health, int speed, Power power, char symbol)
@@ -14,6 +15,8 @@ Enemy::Enemy(const Enemy& other)
 }
 
 char Enemy::getSymbol() const { return symbol; }
+
+std::string Enemy::getTypeName() const { return "Enemy"; }
 
 bool Enemy::tryMoveTowardsHeroBFS(Point& enemyPos, const Point& heroPos, const Board& board) const {
     int n = board.getSize();
@@ -65,17 +68,35 @@ void Enemy::takeTurn(const Point& heroPos, const Board& board) {
     }
 }
 
+int Enemy::tryRangedAttack(const Point& heroPos, const Board& board) const {
+    (void)heroPos;
+    (void)board;
+    return 0; // base enemies have no ranged attack
+}
+
+void Enemy::takeDamage(int amount) {
+    if (amount <= 0) return;
+    health -= amount;
+    if (health < 0) health = 0;
+}
+
+bool Enemy::isAlive() const {
+    return health > 0;
+}
+
 
 
 FastEnemy::FastEnemy()
-    : Enemy(0, 0, 30, 2, Power(), 'F') {
+    : Enemy(0, 0, 30, 2, Power("Bite", 0), 'F') {
 }
 
 FastEnemy::FastEnemy(int x, int y)
-    : Enemy(x, y, 30, 2, Power(), 'F') {
+    : Enemy(x, y, 30, 2, Power("Bite", 0), 'F') {
 }
 
 char FastEnemy::getSymbol() const { return 'F'; }
+
+std::string FastEnemy::getTypeName() const { return "Fast Enemy"; }
 
 void FastEnemy::takeTurn(const Point& heroPos, const Board& board) {
 
@@ -86,4 +107,63 @@ void FastEnemy::takeTurn(const Point& heroPos, const Board& board) {
             y = pos.getY();
         }
     }
+}
+
+
+
+BruteEnemy::BruteEnemy()
+    : Enemy(0, 0, 120, 1, Power("Smash", 25), 'B') {
+}
+
+BruteEnemy::BruteEnemy(int x, int y)
+    : Enemy(x, y, 120, 1, Power("Smash", 25), 'B') {
+}
+
+char BruteEnemy::getSymbol() const { return 'B'; }
+
+std::string BruteEnemy::getTypeName() const { return "Brute Enemy"; }
+
+
+
+RangedEnemy::RangedEnemy()
+    : Enemy(0, 0, 40, 0, Power("Arrow", 10), 'R'), range(5), rangedDamage(10) {
+}
+
+RangedEnemy::RangedEnemy(int x, int y)
+    : Enemy(x, y, 40, 0, Power("Arrow", 10), 'R'), range(5), rangedDamage(10) {
+}
+
+char RangedEnemy::getSymbol() const { return 'R'; }
+
+std::string RangedEnemy::getTypeName() const { return "Ranged Enemy"; }
+
+void RangedEnemy::takeTurn(const Point& heroPos, const Board& board) {
+    // RangedEnemy is stationary: it never moves, it only fires (see
+    // tryRangedAttack, invoked separately by Game). It intentionally
+    // overrides takeTurn with a no-op to avoid chasing the hero.
+    (void)heroPos;
+    (void)board;
+}
+
+int RangedEnemy::tryRangedAttack(const Point& heroPos, const Board& board) const {
+    bool sameRow = (heroPos.getY() == y);
+    bool sameCol = (heroPos.getX() == x);
+    if (!sameRow && !sameCol) return 0;
+
+    int dist = sameRow ? std::abs(heroPos.getX() - x) : std::abs(heroPos.getY() - y);
+    if (dist == 0 || dist > range) return 0;
+
+    // Check line of sight: every cell strictly between the archer and the
+    // hero must be walkable (no wall blocks the shot).
+    int stepX = sameRow ? (heroPos.getX() > x ? 1 : -1) : 0;
+    int stepY = sameCol ? (heroPos.getY() > y ? 1 : -1) : 0;
+
+    int cx = x + stepX, cy = y + stepY;
+    for (int i = 1; i < dist; ++i) {
+        if (!board.isWalkable(cx, cy)) return 0;
+        cx += stepX;
+        cy += stepY;
+    }
+
+    return rangedDamage;
 }

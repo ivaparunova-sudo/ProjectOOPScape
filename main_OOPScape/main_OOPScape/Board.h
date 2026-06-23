@@ -27,5 +27,9 @@ public:
 
     void loadFromFile(const std::string& filename, int difficultyLevel);
     bool isWalkable(int nx, int ny) const;
-    void draw(const Entity* player, const std::vector<Enemy>& enemies) const;
+
+    // Takes raw (non-owning) pointers so that polymorphic enemy types
+    // (FastEnemy, BruteEnemy, RangedEnemy...) keep their own getSymbol()
+    // override when drawn -- no slicing through copies.
+    void draw(const Entity* player, const std::vector<Enemy*>& enemies) const;
 };

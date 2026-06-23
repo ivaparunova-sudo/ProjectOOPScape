@@ -39,6 +39,9 @@
     <ClCompile Include="Power.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Heroes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Power.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Heroes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

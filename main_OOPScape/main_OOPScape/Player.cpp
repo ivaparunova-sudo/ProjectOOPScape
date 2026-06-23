@@ -1,20 +1,21 @@
 #include "Player.h"
-#include "Enemy.h"
-#include <climits>
-#include <cmath>
 
 Player::Player()
-    : Entity(0, 0, 100, 1, Power("Teleport", 0), 'H'), oopCooldown(0) {
+    : Entity(0, 0, 100, 1, Power(), 'H'),
+    oopCooldown(0), oopMaxCooldown(5), maxHealth(100), invulnerableTurns(0) {
 }
 
-Player::Player(int x, int y, int health, int speed, Power power, char symbol)
-    : Entity(x, y, health, speed, power, symbol), oopCooldown(0) {
+Player::Player(int x, int y, int health, int speed, Power power, char symbol, int oopMaxCooldown)
+    : Entity(x, y, health, speed, power, symbol),
+    oopCooldown(0), oopMaxCooldown(oopMaxCooldown), maxHealth(health), invulnerableTurns(0) {
 }
 
 char Player::getSymbol() const { return symbol; }
 
 bool Player::canUseOOP() const { return oopCooldown == 0; }
 int  Player::getOopCooldown() const { return oopCooldown; }
+int  Player::getMaxHealth() const { return maxHealth; }
+bool Player::isInvulnerable() const { return invulnerableTurns > 0; }
 
 void Player::setOopCooldown(int cooldown) { oopCooldown = cooldown; }
 
@@ -22,34 +23,22 @@ void Player::tickCooldown() {
     if (oopCooldown > 0) oopCooldown--;
 }
 
-bool Player::useOOP(const Board& board, const std::vector<Enemy>& enemies) {
-    if (!canUseOOP()) return false;
+void Player::takeDamage(int amount) {
+    if (amount <= 0 || isInvulnerable()) return;
+    health -= amount;
+    if (health < 0) health = 0;
+}
 
-    int n = board.getSize();
-    int bestDist = -1;
-    int bestX = x, bestY = y;
+void Player::heal(int amount) {
+    if (amount <= 0) return;
+    health += amount;
+    if (health > maxHealth) health = maxHealth;
+}
 
-    for (int row = 0; row < n; row++) {
-        for (int col = 0; col < n; col++) {
-            if (!board.isWalkable(col, row)) continue;
+void Player::tickInvulnerability() {
+    if (invulnerableTurns > 0) invulnerableTurns--;
+}
 
-            int minEnemyDist = INT_MAX;
-            for (const Enemy& e : enemies) {
-                int dist = std::abs(e.getX() - col) + std::abs(e.getY() - row);
-                if (dist < minEnemyDist) minEnemyDist = dist;
-            }
-            if (enemies.empty()) minEnemyDist = 0;
-
-            if (minEnemyDist > bestDist) {
-                bestDist = minEnemyDist;
-                bestX = col;
-                bestY = row;
-            }
-        }
-    }
-
-    x = bestX;
-    y = bestY;
-    oopCooldown = OOP_MAX_COOLDOWN;
-    return true;
+void Player::grantInvulnerability(int turns) {
+    if (turns > invulnerableTurns) invulnerableTurns = turns;
 }

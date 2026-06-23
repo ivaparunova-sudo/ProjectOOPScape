@@ -27,4 +27,3 @@ public:
 
 	virtual char getSymbol() const = 0;
 };
-

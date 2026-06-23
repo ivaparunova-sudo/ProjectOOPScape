@@ -29,7 +29,9 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
     bool found = false;
 
     int mapsRead = 0;
+    int lineNo = 0;
     while (std::getline(file, line)) {
+        lineNo++;
 
         size_t first = line.find_first_not_of(" \t\r\n");
         if (first == std::string::npos) continue;
@@ -38,38 +40,47 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
 
         bool isNumber = !trimmed.empty();
         for (char c : trimmed) {
-            if (!std::isdigit(c)) { isNumber = false; break; }
+            if (!std::isdigit(static_cast<unsigned char>(c))) { isNumber = false; break; }
         }
         if (!isNumber) continue;
 
         int n = std::stoi(trimmed);
-
+        if (n < 2 || n > 64)
+            throw std::runtime_error("Invalid map size: " + std::to_string(n) +
+                " (must be 2-64), at line " + std::to_string(lineNo));
 
         std::vector<std::string> rows;
         for (int i = 0; i < n; i++) {
             std::string row;
             if (!std::getline(file, row))
-                throw std::runtime_error("Unexpected end of file while reading map of size " + std::to_string(n));
+                throw std::runtime_error("Unexpected end of file while reading map of size " +
+                    std::to_string(n) + " (expected " + std::to_string(n) + " rows, got " +
+                    std::to_string(rows.size()));
+            // Strip a trailing carriage return left over from CRLF line endings,
+            // but otherwise the row's length must match n exactly -- it is NOT
+            // padded or truncated, since that would silently hide malformed maps.
+            if (!row.empty() && row.back() == '\r') row.pop_back();
             rows.push_back(row);
         }
 
         mapsRead++;
         if (mapsRead != difficultyLevel) continue;
 
-
-        if (n < 2 || n > 64)
-            throw std::runtime_error("Invalid map size: " + std::to_string(n) + " (must be 2-64)");
-
         if ((int)rows.size() != n)
-            throw std::runtime_error("Map size mismatch: expected " + std::to_string(n) + " rows");
+            throw std::runtime_error("Map size mismatch: expected " + std::to_string(n) + " rows, got " +
+                std::to_string(rows.size()));
+
+        for (int row = 0; row < n; row++) {
+            if ((int)rows[row].size() != n)
+                throw std::runtime_error("Row " + std::to_string(row) + " has length " +
+                    std::to_string(rows[row].size()) + ", expected exactly " + std::to_string(n));
+        }
 
         int countS = 0, countF = 0;
         enemyPositions.clear();
 
         for (int row = 0; row < n; row++) {
-
-            std::string& r = rows[row];
-            while ((int)r.size() < n) r += ' ';
+            const std::string& r = rows[row];
 
             for (int col = 0; col < n; col++) {
                 char c = r[col];
@@ -87,6 +98,8 @@ void Board::loadFromFile(const std::string& filename, int difficultyLevel) {
             throw std::runtime_error("Map must have exactly one 'S' (found " + std::to_string(countS) + ")");
         if (countF != 1)
             throw std::runtime_error("Map must have exactly one 'F' (found " + std::to_string(countF) + ")");
+        if (startPos == exitPos)
+            throw std::runtime_error("Start position 'S' and exit 'F' cannot be the same cell");
 
         size = n;
         found = true;
@@ -102,7 +115,7 @@ bool Board::isWalkable(int nx, int ny) const {
     return grid[ny][nx] != '*';
 }
 
-void Board::draw(const Entity* player, const std::vector<Enemy>& enemies) const {
+void Board::draw(const Entity* player, const std::vector<Enemy*>& enemies) const {
     for (int row = 0; row < size; row++) {
         for (int col = 0; col < size; col++) {
 
@@ -114,10 +127,11 @@ void Board::draw(const Entity* player, const std::vector<Enemy>& enemies) const 
             }
 
             bool enemyHere = false;
-            for (const Enemy& e : enemies) {
-                if (e.getX() == col && e.getY() == row) {
+            for (const Enemy* e : enemies) {
+                if (!e->isAlive()) continue;
+                if (e->getX() == col && e->getY() == row) {
                     Color::set(Color::BRIGHT_RED);
-                    std::cout << e.getSymbol();
+                    std::cout << e->getSymbol();
                     Color::reset();
                     enemyHere = true;
                     break;
