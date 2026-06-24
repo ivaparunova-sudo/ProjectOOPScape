@@ -6,17 +6,13 @@
 class Board;
 class Enemy;
 
-// Abstract base for all playable heroes.
-// Concrete heroes (Wizard, Knight, Healer) each implement their own
-// special ability via useOOP(), which is the project's required
-// "special ability" extension point (section 3.5 of the assignment).
 class Player : public Entity
 {
 protected:
 	int oopCooldown;
 	int oopMaxCooldown;
 	int maxHealth;
-	int invulnerableTurns;   // > 0 means immune to damage for this many upcoming enemy turns
+	int invulnerableTurns;   
 
 public:
 	Player(int x, int y, int health, Power power, char symbol, int oopMaxCooldown = 5);

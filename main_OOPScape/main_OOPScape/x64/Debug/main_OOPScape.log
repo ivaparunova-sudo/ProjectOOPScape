@@ -1,6 +1,4 @@
-﻿  Board.cpp
-  Enemy.cpp
-  Game.cpp
+﻿  Game.cpp
   Heroes.cpp
   Player.cpp
   main_OOPScape.cpp
